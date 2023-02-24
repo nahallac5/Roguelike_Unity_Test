@@ -47,7 +47,7 @@ public class Player : MonoBehaviour, Controls.IPlayerActions
         Vector3 futurePosition = transform.position + (Vector3)roundedDirection;
 
         if (IsValidPosition(futurePosition))
-            Action.MovementAction(GetComponent<Entity>(), roundedDirection);
+            moveKeyHeld = Action.BumpAction(GetComponent<Entity>(), roundedDirection);
     }
 
     private bool IsValidPosition(Vector3 futurePosition) 

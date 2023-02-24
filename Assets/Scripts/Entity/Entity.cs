@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    [SerializeField] private bool isSentient = false;
+    [SerializeField] private bool isSentient, blocksMovement;
 
     [SerializeField] private int fieldOfViewRange = 8;
     [SerializeField] private List<Vector3Int> fieldOfView;
     AdamMilVisibility algorithm;
 
     public bool IsSentient { get => isSentient; }
+    public bool BlocksMovement { get => blocksMovement; }
 
     void Start() 
     {

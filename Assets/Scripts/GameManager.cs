@@ -7,26 +7,18 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private float time = 0.1f;
     [SerializeField] private bool isPlayerTurn = true;
-
     [SerializeField] private int entityNum = 0;
     [SerializeField] private List<Entity> entities = new List<Entity>();
-    
-    // Guesser
     public bool IsPlayerTurn {get => isPlayerTurn; }
-
     public List<Entity> Entities { get => entities; }
 
     // Start is called before the first frame update
     void Awake() 
     {
         if (instance == null) 
-        {
             instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
     private void StartTurn() 
     {
@@ -65,5 +57,17 @@ public class GameManager : MonoBehaviour {
     public void InsertEntity(Entity entity, int index) 
     {
         entities.Insert(index, entity);
+    }
+
+    public Entity GetBlockingEntityAtLocation(Vector3 location) 
+    {
+        foreach (Entity entity in entities)
+        {
+            if (entity.BlocksMovement && entity.transform.position == location)
+            {
+                return entity;
+            }
+        }
+        return null;
     }
 }
