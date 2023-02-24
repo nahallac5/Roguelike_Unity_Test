@@ -14,15 +14,22 @@ public class GameManager : MonoBehaviour {
     // Guesser
     public bool IsPlayerTurn {get => isPlayerTurn; }
 
+    public List<Entity> Entities { get => entities; }
+
     // Start is called before the first frame update
-    void Awake() {
-        if (instance == null) {
+    void Awake() 
+    {
+        if (instance == null) 
+        {
             instance = this;
-        } else {
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }
-    private void StartTurn() {
+    private void StartTurn() 
+    {
         //Debug.Log($"{entities[entityNum].name} starts its turn!");
         if (entities[entityNum].GetComponent<Player>())
             isPlayerTurn = true;
@@ -30,7 +37,8 @@ public class GameManager : MonoBehaviour {
             Action.SkipAction(entities[entityNum]); //FIXME -  No logic yet
     }
 
-    public void EndTurn() {
+    public void EndTurn() 
+    {
         //Debug.Log($"{entities[entityNum].name} ends its turn!");
         if (entities[entityNum].GetComponent<Player>())
             isPlayerTurn = false;
@@ -43,16 +51,19 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(TurnDelay());
     }
 
-    private IEnumerator TurnDelay() {
+    private IEnumerator TurnDelay() 
+    {
         yield return new WaitForSeconds(time);
         StartTurn();
     }
 
-    public void AddEntity(Entity entity) {
+    public void AddEntity(Entity entity) 
+    {
         entities.Add(entity);
     }
 
-    public void InsertEntity(Entity entity, int index) {
+    public void InsertEntity(Entity entity, int index) 
+    {
         entities.Insert(index, entity);
     }
 }

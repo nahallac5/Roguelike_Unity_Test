@@ -10,7 +10,8 @@ public class RectangularRoom
     public int width;
     public int height;
 
-    public RectangularRoom(int x, int y, int width, int height) {
+    public RectangularRoom(int x, int y, int width, int height) 
+    {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -32,9 +33,12 @@ public class RectangularRoom
     /// <summary> 
     /// Return True if this room overlaps with another RectangularRoom
     /// </summary>
-    public bool Overlaps(List<RectangularRoom> otherRooms) {
-        foreach (RectangularRoom otherRoom in otherRooms) {
-            if (GetBounds().Intersects(otherRoom.GetBounds())) {
+    public bool Overlaps(List<RectangularRoom> otherRooms) 
+    {
+        foreach (RectangularRoom otherRoom in otherRooms) 
+        {
+            if (GetBounds().Intersects(otherRoom.GetBounds())) 
+            {
                 return true;
             }
         }
