@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4048509265171374932}
   - component: {fileID: 6585109217424379975}
-  - component: {fileID: 5136950786388148849}
+  - component: {fileID: -919053887325758268}
+  - component: {fileID: 4241186729231381566}
+  - component: {fileID: -6512125716501314759}
+  - component: {fileID: 1087287139226272985}
   m_Layer: 0
   m_Name: Orc
   m_TagString: Untagged
@@ -85,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5136950786388148849
+--- !u!114 &-919053887325758268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +97,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 718957387631541289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58df5d10bea5056458026b1be47f6bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 01f9124dde790d34fb9632dcfca7cd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSentient: 1
   blocksMovement: 1
+  isAlive: 1
   fieldOfViewRange: 8
   fieldOfView: []
+  aI: {fileID: 1087287139226272985}
+--- !u!114 &4241186729231381566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718957387631541289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a0a50a84d8c0144b6cae5a0f7c6799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 10
+  hp: 10
+  defense: 0
+  power: 3
+  target: {fileID: 0}
+--- !u!114 &-6512125716501314759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718957387631541289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78a856ff24d1e64c82e808dfc914944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1087287139226272985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718957387631541289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d4525813dd9974681ed48b06b114fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aStar: {fileID: -6512125716501314759}
+  fighter: {fileID: 4241186729231381566}
+  isFighting: 0

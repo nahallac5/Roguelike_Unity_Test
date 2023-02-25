@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 459356102545656177}
   - component: {fileID: 7283382427567110754}
   - component: {fileID: 4166063900449191386}
-  - component: {fileID: -3250176668349478240}
+  - component: {fileID: 4603829323926348665}
+  - component: {fileID: 6991900884296063337}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveKeyHeld: 0
---- !u!114 &-3250176668349478240
+--- !u!114 &4603829323926348665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,10 +109,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 4002287902202861068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58df5d10bea5056458026b1be47f6bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 01f9124dde790d34fb9632dcfca7cd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSentient: 1
   blocksMovement: 1
+  isAlive: 1
   fieldOfViewRange: 8
   fieldOfView: []
+  aI: {fileID: 0}
+--- !u!114 &6991900884296063337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4002287902202861068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a0a50a84d8c0144b6cae5a0f7c6799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 30
+  hp: 30
+  defense: 2
+  power: 5
+  target: {fileID: 0}
